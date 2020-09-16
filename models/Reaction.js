@@ -24,7 +24,7 @@ const ReactionSchema = new Schema({
 // subdocument schema in the Thought model.
 
 // create the Reaction model using the ReactionSchema
-const Reaction = model('Reaction', ReactionSchema);
+const Reaction = ('Reaction', ReactionSchema);
 
 // export the Reaction model
 module.exports = Reaction;
