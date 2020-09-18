@@ -1,24 +1,24 @@
 const router = require('express').Router();
 const {
-    getAllUsers,
+    getAllUser,
     getUserById,
     createUser,
     updateUser,
-    deleteUser
+    // removeUser
 } = require('../../controllers/user-controller');
 
 // set up GET all and POST at /api/user
 router
     .route('/')
-    .get(getAllUsers)
+    .get(getAllUser)
     .post(createUser);
 
 // set up GET one, PUT, and DELETE at /api/user/:id
 router 
-    .route('/:id')
+    .route('/:userId')
     .get(getUserById)
     .put(updateUser)
-    .delete(deleteUser);
+    // .delete(removeUser)
 
 // BONUS: Remove a user's associated thoughts when deleted.
 
