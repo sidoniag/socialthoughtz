@@ -1,12 +1,18 @@
+const moment = require('moment');
 const { Schema, model } = require('mongoose');
 
 const UserSchema = new Schema({
     username: {
-        type: String
+        type: String,
+        required: 'Username is Required',
+        trim: true
         // unique, required, trimmed
     },
     email: {
-        type: String
+        type: String,
+        required: 'Email is Required',
+        unique: true,
+        match: [/.+@.+\..+/]
         // required, unique, must match a valid email address (look into Mongoose's matching validation)
     },
     thoughts: {
