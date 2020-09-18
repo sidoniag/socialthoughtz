@@ -1,4 +1,4 @@
-const express = require('express').Router();
+const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
@@ -8,7 +8,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.use(require('./routes'));
+// app.use(require('./routes'));
+const { User } = require('./models');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socialthoughtz', {
     useFindAndModify: false,
