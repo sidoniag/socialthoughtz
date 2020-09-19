@@ -15,10 +15,10 @@ router
 
 // set up GET one, PUT, and DELETE at /api/user/:id
 router 
-    .route('/:userId')
+    .route('/:id')
     .get(getUserById)
     .put(updateUser)
-    // .delete(removeUser)
+    .delete(deleteUser)
 
 // BONUS: Remove a user's associated thoughts when deleted.
 
