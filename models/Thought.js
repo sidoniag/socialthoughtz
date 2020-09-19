@@ -1,5 +1,34 @@
 const moment = require('moment');
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
+
+const ReactionSchema = new Schema ( 
+    {
+        // set custom id to avoid confusion with parent thought _id
+    reactionId : {
+        type: Schema.Types.ObjectId,
+        default: () => new Types.ObjectId()
+        },
+    reactionBody: {
+        type: String,
+        required: 'Reaction is Require!',
+        maxlength: [280]
+    },
+    username: {
+        type: String,
+        required: 'Username is Required!'
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+        get: createdAtVal => moment(createdAtVal).format('MMM DD YYYY [at] hh:mm a')
+        }
+    },
+    {
+    toJSON: {
+            getters: true
+        } 
+    }
+);
 
 const ThoughtSchema = new Schema(
     {
@@ -21,10 +50,16 @@ const ThoughtSchema = new Schema(
         required: 'Username is Required'
         // required (the user that created this thought)
     },
-    reactions: {
+    reactions: 
         // (these are like replies) Array of nested documents created with the reactionSchema
+        [ReactionSchema]
     },
-});
+    {
+        toJSON: {
+            virtuals: true,
+        },
+    }
+);
 
 // Create a virtual called reactionCount that retrieves the length
 // of the thought's reactions array field on query.
@@ -33,8 +68,8 @@ ThoughtSchema.virtual('reactionCount').get(function() {
     return this.reactions.length;
 });
 
-// create the Pizza model using the PizzaSchema
+// create the thought model using the PizzaSchema
 const Thought = model('Thought', ThoughtSchema);
 
-// export the Pizza model
+// export the thought model
 module.exports = Thought;
