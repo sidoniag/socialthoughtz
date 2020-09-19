@@ -1,5 +1,5 @@
-const moment = require('moment');
 const { Schema, model } = require('mongoose');
+const moment = require('moment');
 
 const UserSchema = new Schema({
     userName: {
@@ -24,9 +24,8 @@ const UserSchema = new Schema({
         // Array of _id values referencing the Thought model
     },
     {
-    friends: {
+    friends: [],
         // Array of _id values referencing the User model (self-reference)
-    },
 },
     {
         toJSON: {
