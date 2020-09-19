@@ -13,7 +13,7 @@ const userController = {
 
    // get one User by id
    getUserById({ params }, res) {
-       User.findOne({ _id: params.ide })
+       User.findOne({ _id: params.id })
        .then(dbUserData => {
            // if no User is found, send 404
            if (!dbUserData) {
@@ -49,7 +49,7 @@ const userController = {
     },
 
     // delete User
-    deletUser({ params }, res) {
+    deleteUser({ params }, res) {
         User.findOneAndDelete({ _id: params.id })
         .then(dbUserData => {
             if (!dbUserData) {
