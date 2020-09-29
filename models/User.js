@@ -1,9 +1,9 @@
 const { Schema, model } = require('mongoose');
-const moment = require('moment');
 
 const UserSchema = new Schema({
     userName: {
         type: String,
+        unique: true,
         required: 'Username is Required',
         trim: true
         // unique, required, trimmed
@@ -24,13 +24,19 @@ const UserSchema = new Schema({
         // Array of _id values referencing the Thought model
     },
     {
-    friends: [],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ],
         // Array of _id values referencing the User model (self-reference)
 },
     {
         toJSON: {
             virtuals: true,
         },
+        id: false
     }
 );
 

@@ -10,8 +10,8 @@ const ReactionSchema = new Schema (
         },
     reactionBody: {
         type: String,
-        required: 'Reaction is Require!',
-        maxlength: [280]
+        required: 'Reaction is Required!',
+        maxlength: 280
     },
     username: {
         type: String,
@@ -35,8 +35,8 @@ const ThoughtSchema = new Schema(
     thoughtText: {
         type: String,
         required: 'Thought is Required',
-        minlength: [1],
-        maxlength: [280]
+        minlength: 1,
+        maxlength: 280
         // required, must be between 1 and 280 characters
     },
     createdAt: {
@@ -57,7 +57,9 @@ const ThoughtSchema = new Schema(
     {
         toJSON: {
             virtuals: true,
+            getters: true
         },
+        id: false
     }
 );
 
