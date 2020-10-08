@@ -18,8 +18,8 @@ This application is a social network where users can share their thoughts, react
 ## Walkthroughs
 
 ## Deployment
-(https://github.com/sidoniag/socialthoughtz)
-## Questions
+[https://github.com/sidoniag/socialthoughtz](https://github.com/sidoniag/socialthoughtz)
 
+## Questions
 Visit my [github](https://github.com/sidoniag)<br>
 Any questions can be emailed directly: <seekersig@gmail.com>
