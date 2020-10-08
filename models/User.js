@@ -4,13 +4,13 @@ const UserSchema = new Schema({
     userName: {
         type: String,
         unique: true,
-        required: 'Username is Required',
+        required: true,
         trim: true
         // unique, required, trimmed
     },
     email: {
         type: String,
-        required: 'Email is Required',
+        required: true,
         unique: true,
         match: [/.+@.+\..+/]
         // required, unique, must match a valid email address (look into Mongoose's matching validation)

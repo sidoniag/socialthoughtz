@@ -17,7 +17,7 @@ router
 
 // set up GET one, PUT, and DELETE at /api/thoughts/:id
 router 
-    .route('/:id')
+    .route('/:thoughtId')
     .get(getThoughtById)
     .put(updateThought)
     .delete(deleteThought);
@@ -25,8 +25,7 @@ router
 // POST to create a reaction stored in a single thought's reactions array field
 router
     .route('/:thoughtId/reactions')
-    .post(addReaction)
-    .delete(deleteReaction);
+    .post(addReaction);
     
 // DELETE to pull and remove a reaction by the reaction's reactionId value
 router

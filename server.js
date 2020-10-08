@@ -1,5 +1,4 @@
 const express = require('express');
-// const mongoose = require('mongoose');
 const db = require('./config/connection');
 const routes = require('./routes');
 
@@ -9,12 +8,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes)
-
-// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/socialthoughtz', {
-//     useFindAndModify: false,
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-// });
 
 // use this to log mongo queries being executed
 // mongoose.set('debug', true);
