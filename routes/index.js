@@ -5,7 +5,6 @@ const apiRoutes = require('./api');
 
 // add prefix of `/api` to all of the api routes imported form the `api` directory
 router.use('/api', apiRoutes);
-// router.use('/', htmlRoutes);
 
 router.use((req, res) => {
   // res.status(404).send('404 Error!');
