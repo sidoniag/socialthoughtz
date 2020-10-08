@@ -72,15 +72,15 @@ const thoughtController = {
 },
 
     // delete thought
-    deleteThought({ params }, res) {
-        Thought.findOneAndDelete({ _id: params.thoughtId })
-        .then( deletedThought => {
-            if (! deletedThought) {
+    deleteThought(req, res) {
+        Thought.findOneAndRemove({ _id: req.params.thoughtId }, { $set: req.body }, { runValidators: true })
+        .then( dbThoughtData => {
+            if (! dbThoughtData) {
                 return res.status(404).json({ message: 'No thought with this id!'});
             }
             return User.findOneAndUpdate(
-                { _id: params.userId },
-                { $pull: { comments: params.thoughtId } },
+                { thoughts: req.params.userId },
+                { $pull: { thoughts: params.thoughtId } },
                 { new: true }
             );  
         })
@@ -97,7 +97,7 @@ const thoughtController = {
          // add reaction
          addReaction({ params, body }, res) {
             Thought.findOneAndUpdate(
-                { _id: params.thoughtId},
+                { thoughts: params.thoughtId},
                 { $push: { replies: body }},
                 { new: true, runValidators: true}
             )

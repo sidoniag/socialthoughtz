@@ -30,7 +30,6 @@ const UserSchema = new Schema({
             ref: 'User'
         }
     ],
-        // Array of _id values referencing the User model (self-reference)
 },
     {
         toJSON: {
