@@ -23,6 +23,8 @@ const userController = {
 
    // get one User by id
    getUserById( req, res) {
+       console.log('hi')
+       console.log(req.params)
        User.findOne({ _id: req.body._id })
        .select('-__v')
        .populate({
