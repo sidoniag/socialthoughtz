@@ -33,8 +33,8 @@ const userController = {
     },
 
    // createUser
-   createUser(req, res) {
-       User.create(req.body)
+   createUser({ body }, res) {
+       User.create(body)
        .then((dbUserData) => {
            res.json(dbUserData);
        })
@@ -43,6 +43,7 @@ const userController = {
            res.status(500).json({ message: 'failing here'});
        });
        },
+
    // update User by id
    updateUser(req, res) {
        User.findOneAndUpdate(
