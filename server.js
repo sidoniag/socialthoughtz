@@ -9,12 +9,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(routes)
 
-// use this to log mongo queries being executed
-// mongoose.set('debug', true);
-
-// app.use(require('./routes'));
-
-// app.listen(PORT, () => console.log(`Connected on localhost:${PORT}`));
 db.once('open', () => {
     app.listen(PORT, () => {
         console.log(`API server running on port ${PORT}!`);
