@@ -33,23 +33,23 @@ const userController = {
   },
 
   // createUser
-    createUser(req, res) {
-         User.create(req.body)
-         .then((dbUserData) => {
-             res.json(dbUserData);
-         })
-         .catch((err) => {
-             console.log(err);
-             res.status(500).json(err);
-         });
-         },
+    // createUser(req, res) {
+    //      User.create(req.body)
+    //      .then((dbUserData) => {
+    //          res.json(dbUserData);
+    //      })
+    //      .catch((err) => {
+    //          console.log(err);
+    //          res.status(500).json(err);
+    //      });
+    //      },
 
   //           // createUser
-//   createUser(req, res) {
-//     User.create(req.body)
-//       .then((dbUserData) => res.json(dbUserData))
-//       .catch((err) => res.status(400).json(err));
-//   },
+  createUser(req, res) {
+    User.create(req.body)
+      .then((dbUserData) => res.json(dbUserData))
+      .catch((err) => res.status(400).json(err));
+  },
   // update User by id
   updateUser(req, res) {
     User.findOneAndUpdate(

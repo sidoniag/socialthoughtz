@@ -14,8 +14,11 @@ This application is a social network where users can share their thoughts, react
 * MongoDB
 * Mongoose
 * Moment.js
+* Insomnia
 
 ## Walkthroughs
+
+(img src="/social_insomnia.png")
 
 ## Deployment
 Check out the deployed site [here](https://github.com/sidoniag/socialthoughtz)
