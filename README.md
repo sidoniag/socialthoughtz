@@ -5,7 +5,7 @@ This application is a social network where users can share their thoughts, react
 
 ## Table of Contents
 * [Technologies](#technologies)
-* [Walkthroughs](#walkthroughs)
+* [WalkthroughVideo](#walkthroughvideo)
 * [Deployment](#deployment)
 * [Questions](#questions)
 
@@ -16,13 +16,14 @@ This application is a social network where users can share their thoughts, react
 * Moment.js
 * Insomnia
 
-## Walkthroughs
+## Walkthrough Video
 
-(img src="/social_insomnia.png")
+[walkthrough video link](https://drive.google.com/file/d/1ukBukD6ji1lwOBhWLuHJ1cqCGZps3MiX/view)
 
-## Deployment
-Check out the deployed site [here](https://github.com/sidoniag/socialthoughtz)
+## Start Screen - Insomnia
+
+<img src="./social_insomnia.png">
 
 ## Questions
 Visit my [github](https://github.com/sidoniag)<br>
-Any questions can be emailed directly: <seekersig@gmail.com>
+Questions here: <seekersig@gmail.com>
