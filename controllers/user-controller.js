@@ -54,7 +54,7 @@ const userController = {
              })
         .then((dbUserData) => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with this id!'});
+                res.status(404).json({ message: 'Update user info!'});
             }
             res.json(dbUserData);
         })
@@ -71,7 +71,7 @@ const userController = {
             return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
         })
         .then(() => {
-            res.json({ message: 'Associated thought deleted!' });
+            res.json({ message: 'User deleted!' });
         })
         .catch((err) => {
             console.log(err);
