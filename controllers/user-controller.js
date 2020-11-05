@@ -3,7 +3,7 @@ const { User, Thought } = require('../models');
 const userController = {
    // get all Users
    getAllUser(req, res) {
-       User.find({})
+       User.find()
        .select('-__v')
        .then((dbUserData) => {
            res.json(dbUserData);
@@ -66,14 +66,15 @@ const userController = {
         User.findOneAndDelete({ _id: req.params.userId })
         .then((dbUserData) => {
             if (!dbUserData) {
-                res.status(404).json({ message: 'No user found with that id!'});
+                return res.status(404).json({ message: 'No user found with that id!'});
             }
             return Thought.deleteMany({ _id: { $in: dbUserData.thoughts } });
         })
         .then(() => {
-            res.json({ message: 'Associated thought deleted! });
+            res.json({ message: 'Associated thought deleted!' });
         })
         .catch((err) => {
+            console.log(err);
             res.status(500).json(err);
         });
     },
@@ -87,12 +88,13 @@ const userController = {
             )
          .then((dbUserData) => {
              if (!dbUserData) {
-                 res.status(404).json({ message: 'No user found with this id!'});
+                 return res.status(404).json({ message: 'No user found with this id!'});
              }
              res.json(dbUserData);
          })
          .catch((err) => {
-             res.status(400).json(err);
+             console.log(err);
+             res.status(500).json(err);
          });
      },
 
