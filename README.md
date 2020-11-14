@@ -18,7 +18,7 @@ This application is the back-end framework of a social network where users can s
 
 ## Walkthrough Video
 
-[walkthrough video link](https://drive.google.com/file/d/1ukBukD6ji1lwOBhWLuHJ1cqCGZps3MiX/view)
+[Video](https://drive.google.com/file/d/1ukBukD6ji1lwOBhWLuHJ1cqCGZps3MiX/view)
 
 ## Start Screen - Insomnia
 
