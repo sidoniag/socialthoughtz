@@ -2,7 +2,7 @@
 
 **SUMMARY**
 
-This application is the back-end framework of a social network where users can share their thoughts, react to friends' thoughts, and create a friend list. A walkthrough video is included to demonstrate functionality. 
+This is the back-end of a social network where users can share their thoughts, react to friends' thoughts, and create a friend list. A walkthrough video is included to demonstrate functionality. 
 
 ## Table of Contents
 * [Technologies](#technologies)
